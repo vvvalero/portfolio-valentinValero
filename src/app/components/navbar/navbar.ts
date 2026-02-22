@@ -1,45 +1,51 @@
-import { Component, HostListener, inject, OnInit, OnDestroy, PLATFORM_ID, signal } from '@angular/core';
+import { Component, HostListener, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { I18nService } from '../../services/i18n.service';
+
+const SECTIONS = ['hero', 'experience', 'projects', 'contact'];
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
-  private observer?: IntersectionObserver;
+  readonly i18n = inject(I18nService);
 
   isScrolled = signal(false);
   menuOpen = signal(false);
-  activeSection = signal<string>('');
+  activeSection = signal<string>('hero');
 
   @HostListener('window:scroll')
   onScroll(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.isScrolled.set(window.scrollY > 20);
-    }
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.isScrolled.set(window.scrollY > 20);
+    this.updateActiveSection();
   }
 
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
-    const sections = ['hero', 'experience', 'projects', 'contact'];
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) this.activeSection.set(entry.target.id);
-        });
-      },
-      { threshold: 0.3 }
-    );
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) this.observer!.observe(el);
-    });
+    this.updateActiveSection();
   }
 
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
+  private updateActiveSection(): void {
+    // Si está al fondo del todo, marcar siempre contact
+    const atBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 8;
+    if (atBottom) {
+      this.activeSection.set('contact');
+      return;
+    }
+    // Trigger point: 35% desde el top del viewport (debajo del navbar)
+    const trigger = window.scrollY + window.innerHeight * 0.35;
+    let current = SECTIONS[0];
+    for (const id of SECTIONS) {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= trigger) {
+        current = id;
+      }
+    }
+    this.activeSection.set(current);
   }
 
   scrollTo(sectionId: string): void {

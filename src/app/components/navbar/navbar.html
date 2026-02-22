@@ -1,22 +1,51 @@
 <header class="navbar" [class.scrolled]="isScrolled()">
   <div class="navbar-inner container">
-    <button class="navbar-brand" (click)="scrollTo('hero')">Valentín.</button>
+    <button class="navbar-brand" (click)="scrollTo('hero')">Valentín<span class="brand-dot">.</span></button>
 
     <nav class="navbar-nav" [class.open]="menuOpen()">
-      <button [class.active]="activeSection() === 'experience'" (click)="scrollTo('experience')">Experiencia</button>
-      <button [class.active]="activeSection() === 'projects'" (click)="scrollTo('projects')">Proyectos</button>
-      <button [class.active]="activeSection() === 'contact'" (click)="scrollTo('contact')">Contacto</button>
+      <button [class.active]="activeSection() === 'experience'" (click)="scrollTo('experience')">{{ i18n.T().nav.experience }}</button>
+      <button [class.active]="activeSection() === 'projects'" (click)="scrollTo('projects')">{{ i18n.T().nav.projects }}</button>
+      <button [class.active]="activeSection() === 'contact'" (click)="scrollTo('contact')">{{ i18n.T().nav.contact }}</button>
     </nav>
 
-    <div class="navbar-cv-group">
-      <a href="/cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost navbar-cv">Ver CV</a>
-      <a href="/cv.pdf" download="ValentinValero_CV.pdf" class="navbar-cv-download" aria-label="Descargar CV">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-      </a>
+    <div class="navbar-actions">
+      <div class="navbar-cv-group">
+        <a href="/cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost navbar-cv">{{ i18n.T().nav.viewCv }}</a>
+        <a href="/cv.pdf" download="ValentinValero_CV.pdf" class="navbar-cv-download" aria-label="Descargar CV">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+      <button class="lang-toggle" (click)="i18n.toggle()" [attr.aria-label]="i18n.lang() === 'es' ? 'Switch to English' : 'Cambiar a español'">
+        @if (i18n.lang() === 'es') {
+          <!-- Bandera España -->
+          <svg viewBox="0 0 22 15" width="22" height="15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><clipPath id="clip-es"><rect width="22" height="15" rx="2"/></clipPath></defs>
+            <g clip-path="url(#clip-es)">
+              <rect width="22" height="15" fill="#c60b1e"/>
+              <rect y="3.75" width="22" height="7.5" fill="#ffc400"/>
+            </g>
+          </svg>
+        } @else {
+          <!-- Bandera Reino Unido -->
+          <svg viewBox="0 0 22 15" width="22" height="15" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><clipPath id="clip-en"><rect width="22" height="15" rx="2"/></clipPath></defs>
+            <g clip-path="url(#clip-en)">
+              <rect width="22" height="15" fill="#012169"/>
+              <path d="M0,0 L22,15 M22,0 L0,15" stroke="white" stroke-width="4"/>
+              <path d="M0,0 L22,15 M22,0 L0,15" stroke="#C8102E" stroke-width="2.4"/>
+              <rect x="9" y="0" width="4" height="15" fill="white"/>
+              <rect x="0" y="5.5" width="22" height="4" fill="white"/>
+              <rect x="10" y="0" width="2" height="15" fill="#C8102E"/>
+              <rect x="0" y="6.5" width="22" height="2" fill="#C8102E"/>
+            </g>
+          </svg>
+        }
+      </button>
     </div>
 
     <button class="navbar-toggle" (click)="toggleMenu()" aria-label="Abrir menú">

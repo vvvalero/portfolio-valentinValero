@@ -9,33 +9,31 @@
       </h1>
 
       <div class="hero-actions">
-        <button class="btn btn-primary" (click)="scrollTo('projects')">Ver proyectos</button>
-        <button class="btn btn-ghost" (click)="scrollTo('contact')">Contactar</button>
+        <button class="btn btn-primary" (click)="scrollTo('projects')">{{ heroT().cta1 }}</button>
+        <button class="btn btn-ghost" (click)="scrollTo('contact')">{{ heroT().cta2 }}</button>
       </div>
     </div>
 
     <!-- Right: Role + description + meta -->
     <div class="hero-right">
-      <p class="hero-role">Ingeniería Informática <em>· Ciberseguridad</em></p>
+      <p class="hero-role">{{ heroT().role }}</p>
 
       <p class="hero-description">
-        Estudiante de 4.º curso con mención en Tecnologías de la Información.
-        Base sólida en desarrollo de software, sistemas y redes, con vistas a especializarme
-        en seguridad ofensiva y defensa de sistemas.
+        {{ heroT().description }}
       </p>
 
       <dl class="hero-meta">
         <div class="hero-meta-item">
-          <dt>Base</dt>
-          <dd>España</dd>
+          <dt>{{ heroT().metaBase }}</dt>
+          <dd>{{ heroT().metaBaseVal }}</dd>
         </div>
         <div class="hero-meta-item">
-          <dt>Foco</dt>
-          <dd>Ciberseguridad &amp; Red Team</dd>
+          <dt>{{ heroT().metaFocus }}</dt>
+          <dd>{{ heroT().metaFocusVal }}</dd>
         </div>
         <div class="hero-meta-item">
-          <dt>Stack</dt>
-          <dd>Java · JavaScript · Linux</dd>
+          <dt>{{ heroT().metaStack }}</dt>
+          <dd>{{ heroT().metaStackVal }}</dd>
         </div>
       </dl>
     </div>
