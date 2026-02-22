@@ -24,7 +24,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 body {
@@ -39,9 +39,9 @@ body {
 
 /* ---- Layout ---- */
 .container {
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 1.5rem;
 }
 
 section {
@@ -134,7 +134,7 @@ section {
 
 .marquee-track {
   overflow: hidden;
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto 2rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
