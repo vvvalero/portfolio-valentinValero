@@ -197,3 +197,24 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 640px) {
+  #contact {
+    padding: 2.5rem 0 3rem;
+    margin-top: 2rem;
+  }
+
+  .contact-inner {
+    gap: 2rem;
+  }
+
+  .contact-right {
+    max-width: 100%;
+  }
+
+  .contact-social {
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+}
+
