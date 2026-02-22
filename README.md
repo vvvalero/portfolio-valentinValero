@@ -2,7 +2,7 @@
 
 Portfolio personal de **Valentín Valero Jiménez**, estudiante de Ingeniería Informática con mención en Tecnologías de la Información y enfoque en ciberseguridad y desarrollo de software.
 
-🔗 [valentin-valero.vercel.app](https://valentin-valero.vercel.app)
+🔗 [vvalero.dev](https://www.vvalero.dev/)
 
 ---
 
@@ -51,36 +51,6 @@ public/
 ├── favicon.svg
 └── cv.pdf
 ```
-
----
-
-## Desarrollo local
-
-```bash
-npm install
-npm start
-```
-
-Abre [http://localhost:4200](http://localhost:4200) en el navegador.
-
-### SSR en local
-
-```bash
-npm run build
-npm run serve:ssr:portfolio-valentin
-```
-
----
-
-## Tests
-
-```bash
-npm test
-```
-
-Ejecuta los tests unitarios con [Vitest](https://vitest.dev/).
-
----
 
 ## Despliegue
 
