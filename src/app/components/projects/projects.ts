@@ -49,7 +49,7 @@ export class Projects {
       tech: ['React 18', 'Material UI', 'Vite', 'Context API', 'Drag & Drop'],
       image: '/img/taskflow-preview.png',
       github: 'https://github.com/vvvalero/taskflow',
-      live: 'https://taskflow-tau-hazel.vercel.app/',
+      live: 'https://taskflow.vvalero.dev/',
     },
   ];
 }
