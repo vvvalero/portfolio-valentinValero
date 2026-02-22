@@ -9,8 +9,6 @@
 
         <div class="project-content">
           <div class="project-header">
-            <span class="project-number">{{ padId(project.id) }}</span>
-            <h3 class="project-name">{{ project.name }}</h3>
             <div class="project-external">
               @if (project.github) {
                 <a [href]="project.github" target="_blank" rel="noopener" aria-label="Ver código en GitHub" class="project-link">
@@ -28,6 +26,10 @@
                   </svg>
                 </a>
               }
+            </div>
+            <div class="project-title-row">
+              <span class="project-number">{{ padId(project.id) }}</span>
+              <h3 class="project-name">{{ project.name }}</h3>
             </div>
           </div>
 

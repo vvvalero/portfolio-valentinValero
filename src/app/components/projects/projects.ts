@@ -43,12 +43,13 @@ export class Projects {
     },
     {
       id: 3,
-      name: 'Portfolio Personal',
+      name: 'TaskFlow',
       description:
-        'Este mismo portfolio, construido con Angular 21 y SSR. Componentes standalone, diseño sin librerías de UI externas, animaciones en CSS puro e IntersectionObserver para navegación activa.',
-      tech: ['Angular 21', 'TypeScript', 'SCSS', 'SSR'],
-      image: '/img/portfolio.png',
-      github: 'https://github.com/vvvalero',
+        'Gestor de tareas con funcionalidades avanzadas: subtareas con barra de progreso, etiquetas personalizadas con colores, drag & drop para reordenar, modo oscuro, fechas de vencimiento, exportación/importación en JSON y persistencia en localStorage.',
+      tech: ['React 18', 'Material UI', 'Vite', 'Context API', 'Drag & Drop'],
+      image: '/img/taskflow-preview.png',
+      github: 'https://github.com/vvvalero/taskflow',
+      live: 'https://taskflow-tau-hazel.vercel.app/',
     },
   ];
 }
