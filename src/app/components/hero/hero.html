@@ -1,0 +1,52 @@
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <!-- Left: Name + CTA -->
+    <div class="hero-left">
+      <span class="hero-eyebrow section-label">— Disponible para nuevas oportunidades</span>
+
+      <h1 class="hero-name">
+        <span class="hero-name-line">Valentín</span>
+        <span class="hero-name-line hero-name-italic">Valero.</span>
+      </h1>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" (click)="scrollTo('projects')">Ver proyectos</button>
+        <button class="btn btn-ghost" (click)="scrollTo('contact')">Contactar</button>
+      </div>
+    </div>
+
+    <!-- Right: Role + description + meta -->
+    <div class="hero-right">
+      <p class="hero-role">Desarrollador de Software <em>Frontend</em></p>
+
+      <p class="hero-description">
+        Construyo aplicaciones web de alto rendimiento con foco en arquitectura limpia
+        y experiencia de usuario. Especializado en Angular, TypeScript y diseño responsivo.
+      </p>
+
+      <dl class="hero-meta">
+        <div class="hero-meta-item">
+          <dt>Base</dt>
+          <dd>España</dd>
+        </div>
+        <div class="hero-meta-item">
+          <dt>Foco</dt>
+          <dd>Frontend &amp; Angular</dd>
+        </div>
+        <div class="hero-meta-item">
+          <dt>Stack</dt>
+          <dd>Angular · TypeScript · Node.js</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Skills marquee -->
+<div class="marquee-track" aria-hidden="true">
+  <div class="marquee-inner">
+    @for (item of marqueeItems.concat(marqueeItems); track $index) {
+      <span class="marquee-item">{{ item }}</span>
+    }
+  </div>
+</div>

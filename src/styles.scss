@@ -1,1 +1,208 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --bg:           #ffffff;
+  --bg-surface:   #f8f7ff;
+  --bg-raised:    #f0eeff;
+  --text:         #1a1523;
+  --text-muted:   #6b6679;
+  --text-dim:     #b0aabb;
+  --text-subtle:  #e8e5f0;
+  --accent:       #7c3aed;
+  --accent-dim:   #9d6ff5;
+  --accent-light: #ede9fe;
+  --border:       #e8e4f2;
+  --border-mid:   #d4cde8;
+  --navbar-h:     68px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ---- Layout ---- */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+section {
+  padding: 4.5rem 0;
+}
+
+/* ---- Typography ---- */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.625rem;
+  display: block;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0 0 2rem;
+}
+
+.section-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 3.5rem;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: background-color 0.18s, color 0.18s, border-color 0.18s;
+  letter-spacing: 0.01em;
+
+  &.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+
+    &:hover {
+      background-color: #6d28d9;
+      border-color: #6d28d9;
+    }
+  }
+
+  &.btn-ghost {
+    background-color: transparent;
+    color: var(--text);
+    border-color: var(--border-mid);
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background-color: var(--accent-light);
+    }
+  }
+}
+
+/* ---- Dividers ---- */
+.rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ---- Infinite marquee ---- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 0;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0 2.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--border-mid);
+    border-radius: 50%;
+    margin-left: 2.5rem;
+  }
+}
+
+/* ---- Site footer ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.25rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  p, a {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+

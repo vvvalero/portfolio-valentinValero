@@ -1,0 +1,20 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <div class="navbar-inner container">
+    <button class="navbar-brand" (click)="scrollTo('hero')">Valentín.</button>
+
+    <nav class="navbar-nav" [class.open]="menuOpen()">
+      <button [class.active]="activeSection() === 'experience'" (click)="scrollTo('experience')">Experiencia</button>
+      <button [class.active]="activeSection() === 'projects'" (click)="scrollTo('projects')">Proyectos</button>
+      <button [class.active]="activeSection() === 'contact'" (click)="scrollTo('contact')">Contacto</button>
+    </nav>
+
+    <a href="#" class="btn btn-ghost navbar-cv">Descargar CV</a>
+
+    <button class="navbar-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
