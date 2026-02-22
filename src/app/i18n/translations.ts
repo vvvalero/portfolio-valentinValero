@@ -46,7 +46,7 @@ export interface Translations {
 export const TRANSLATIONS: Record<Lang, Translations> = {
   es: {
     nav: {
-      experience: 'Experiencia',
+      experience: 'Trayectoria',
       projects: 'Proyectos',
       contact: 'Contacto',
       viewCv: 'Ver CV',
@@ -141,7 +141,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
 
   en: {
     nav: {
-      experience: 'Experience',
+      experience: 'Career Path',
       projects: 'Projects',
       contact: 'Contact',
       viewCv: 'View CV',
@@ -161,7 +161,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
     },
     experience: {
       sectionLabel: 'Professional career',
-      sectionHeading: 'Background',
+      sectionHeading: 'Career Path',
       tabWork: 'Work experience',
       tabEducation: 'Education',
       work: [
