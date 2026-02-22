@@ -186,11 +186,19 @@
 
 @media (max-width: 640px) {
   .navbar-inner {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto auto;
   }
 
-  .navbar-nav,
-  .navbar-actions { display: none; }
+  .navbar-nav { display: none; }
+
+  .navbar-cv {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .navbar-cv-download {
+    padding: 0 0.45rem;
+  }
 
   .navbar-toggle {
     display: flex;
