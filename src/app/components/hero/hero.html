@@ -17,11 +17,12 @@
 
     <!-- Right: Role + description + meta -->
     <div class="hero-right">
-      <p class="hero-role">Desarrollador de Software <em>Frontend</em></p>
+      <p class="hero-role">Ingeniería Informática <em>· Ciberseguridad</em></p>
 
       <p class="hero-description">
-        Construyo aplicaciones web de alto rendimiento con foco en arquitectura limpia
-        y experiencia de usuario. Especializado en Angular, TypeScript y diseño responsivo.
+        Estudiante de 4.º curso con mención en Tecnologías de la Información.
+        Base sólida en desarrollo de software, sistemas y redes, con vistas a especializarme
+        en seguridad ofensiva y defensa de sistemas.
       </p>
 
       <dl class="hero-meta">
@@ -31,11 +32,11 @@
         </div>
         <div class="hero-meta-item">
           <dt>Foco</dt>
-          <dd>Frontend &amp; Angular</dd>
+          <dd>Ciberseguridad &amp; Red Team</dd>
         </div>
         <div class="hero-meta-item">
           <dt>Stack</dt>
-          <dd>Angular · TypeScript · Node.js</dd>
+          <dd>Python · Java · Angular · Linux</dd>
         </div>
       </dl>
     </div>
@@ -46,7 +47,10 @@
 <div class="marquee-track" aria-hidden="true">
   <div class="marquee-inner">
     @for (item of marqueeItems.concat(marqueeItems); track $index) {
-      <span class="marquee-item">{{ item }}</span>
+      <span class="marquee-item">
+        <span class="marquee-icon" [innerHTML]="item.icon | safeHtml"></span>
+        {{ item.name }}
+      </span>
     }
   </div>
 </div>
