@@ -1,5 +1,6 @@
 import { Component, HostListener, inject, OnInit, OnDestroy, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class NavbarComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private observer?: IntersectionObserver;
+  readonly i18n = inject(I18nService);
 
   isScrolled = signal(false);
   menuOpen = signal(false);

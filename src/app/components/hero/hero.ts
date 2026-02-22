@@ -1,6 +1,7 @@
-import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { Component, computed, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
+import { I18nService } from '../../services/i18n.service';
 
 export interface MarqueeItem {
   name: string;
@@ -18,6 +19,8 @@ const svg = (inner: string): string =>
 })
 export class Hero {
   private platformId = inject(PLATFORM_ID);
+  private i18n = inject(I18nService);
+  readonly heroT = computed(() => this.i18n.T().hero);
 
   readonly marqueeItems: MarqueeItem[] = [
     {

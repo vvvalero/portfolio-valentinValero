@@ -1,6 +1,6 @@
 <section id="experience" class="container">
-  <span class="section-label">Carrera profesional</span>
-  <h2 class="section-heading">Trayectoria</h2>
+  <span class="section-label">{{ i18n.T().experience.sectionLabel }}</span>
+  <h2 class="section-heading">{{ i18n.T().experience.sectionHeading }}</h2>
 
   <div class="tab-bar">
     <button
@@ -8,20 +8,20 @@
       [class.active]="activeTab() === 'work'"
       (click)="setTab('work')"
     >
-      Experiencia profesional
+      {{ i18n.T().experience.tabWork }}
     </button>
     <button
       class="tab-btn"
       [class.active]="activeTab() === 'education'"
       (click)="setTab('education')"
     >
-      Formación
+      {{ i18n.T().experience.tabEducation }}
     </button>
   </div>
 
   @if (activeTab() === 'work') {
     <div class="timeline">
-      @for (exp of workExperiences; track exp.id) {
+      @for (exp of workExperiences(); track exp.id) {
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-header">
@@ -38,7 +38,7 @@
 
   @if (activeTab() === 'education') {
     <div class="timeline">
-      @for (edu of education; track edu.id) {
+      @for (edu of education(); track edu.id) {
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-header">

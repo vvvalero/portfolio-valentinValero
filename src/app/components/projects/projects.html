@@ -1,10 +1,10 @@
 <section id="projects">
   <div class="container">
-    <span class="section-label">Lo que he construido</span>
-    <h2 class="section-heading">Proyectos</h2>
+    <span class="section-label">{{ sectionLabel() }}</span>
+    <h2 class="section-heading">{{ sectionHeading() }}</h2>
 
     <ul class="projects-list">
-    @for (project of projects; track project.id) {
+    @for (project of projects(); track project.id) {
       <li class="project-item">
 
         <div class="project-content">
