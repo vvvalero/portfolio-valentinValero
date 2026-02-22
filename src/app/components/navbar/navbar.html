@@ -6,15 +6,6 @@
       <button [class.active]="activeSection() === 'experience'" (click)="scrollTo('experience')">{{ i18n.T().nav.experience }}</button>
       <button [class.active]="activeSection() === 'projects'" (click)="scrollTo('projects')">{{ i18n.T().nav.projects }}</button>
       <button [class.active]="activeSection() === 'contact'" (click)="scrollTo('contact')">{{ i18n.T().nav.contact }}</button>
-
-      <div class="nav-mobile-footer">
-        <a href="/cv.pdf" target="_blank" rel="noopener" class="btn btn-primary nav-mobile-cv">{{ i18n.T().nav.viewCv }}</a>
-        <button class="nav-mobile-lang" (click)="i18n.toggle()">
-          <span [class.active-lang]="i18n.lang() === 'es'">ES</span>
-          <span class="lang-sep">/</span>
-          <span [class.active-lang]="i18n.lang() === 'en'">EN</span>
-        </button>
-      </div>
     </nav>
 
     <div class="navbar-actions">
@@ -57,7 +48,7 @@
       </button>
     </div>
 
-    <button class="navbar-toggle" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Abrir menú">
+    <button class="navbar-toggle" (click)="toggleMenu()" aria-label="Abrir menú">
       <span></span>
       <span></span>
       <span></span>

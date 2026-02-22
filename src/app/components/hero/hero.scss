@@ -125,24 +125,3 @@
   }
 }
 
-@media (max-width: 640px) {
-  .hero {
-    padding: 5rem 0 2rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-
-    .btn {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 430px) {
-  .hero {
-    padding: 4.5rem 0 1.5rem;
-  }
-}
-
