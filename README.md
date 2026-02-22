@@ -2,7 +2,7 @@
 
 Portfolio personal de **Valentín Valero Jiménez**, estudiante de Ingeniería Informática con mención en Tecnologías de la Información y enfoque en ciberseguridad y desarrollo de software.
 
-🔗 [valentin-valero.vercel.app](https://www.vvalero.dev/)
+🔗 [vvalero.dev](https://www.vvalero.dev/)
 
 ---
 
