@@ -97,7 +97,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
         },
         {
           id: 3,
-          role: 'Cambridge C1 Advanced (en curso)',
+          role: 'Certificado de Inglés Cambridge C1 Advanced (en curso)',
           company: 'Cambridge Assessment English',
           date: '2026 — Actualidad',
           description: 'Preparación del examen Cambridge C1 Advanced (CAE).',
@@ -192,7 +192,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
         },
         {
           id: 3,
-          role: 'Cambridge C1 Advanced (in progress)',
+          role: 'Cambridge C1 English Advanced (in progress)',
           company: 'Cambridge Assessment English',
           date: '2026 — Present',
           description: 'Preparation for the Cambridge C1 Advanced (CAE) exam.',
