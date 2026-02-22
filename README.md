@@ -1,59 +1,99 @@
-# PortfolioValentin
+# Valentín Valero — Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Portfolio personal de **Valentín Valero Jiménez**, estudiante de Ingeniería Informática con mención en Tecnologías de la Información y enfoque en ciberseguridad y desarrollo de software.
 
-## Development server
+🔗 [valentin-valero.vercel.app](https://valentin-valero.vercel.app)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## Stack
+
+| Tecnología | Versión |
+|---|---|
+| Angular | 21.1 |
+| Angular SSR | 21.1 |
+| TypeScript | 5.9 |
+| SCSS | — |
+| Vitest | 4.x |
+| Node / Express | 5.x |
+| Vercel | — |
+
+---
+
+## Características
+
+- **SSR** con Angular Universal (Express + `@angular/ssr`)
+- **i18n propio** — español / inglés sin dependencias externas, cambiable en tiempo real con señales Angular
+- Diseño **responsive** adaptado a móvil, tablet y escritorio
+- Favicon SVG alineado con la identidad visual del portfolio
+- **Speed Insights** de Vercel integrado
+- Descarga de CV directamente desde la barra de navegación
+
+---
+
+## Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── navbar/       # Barra de navegación con menú móvil
+│   │   ├── hero/         # Sección de presentación y skills marquee
+│   │   ├── experience/   # Experiencia laboral y formación (tab bar)
+│   │   ├── projects/     # Proyectos destacados
+│   │   └── contact/      # Sección de contacto
+│   ├── i18n/             # Traducciones ES / EN
+│   ├── pipes/            # SafeHtmlPipe
+│   └── services/         # I18nService (signal-based)
+├── styles.scss           # Estilos globales y design tokens
+└── index.html
+public/
+├── favicon.svg
+└── cv.pdf
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Desarrollo local
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abre [http://localhost:4200](http://localhost:4200) en el navegador.
+
+### SSR en local
 
 ```bash
-ng generate --help
+npm run build
+npm run serve:ssr:portfolio-valentin
 ```
 
-## Building
+---
 
-To build the project run:
+## Tests
 
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Ejecuta los tests unitarios con [Vitest](https://vitest.dev/).
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Despliegue
+
+El proyecto se despliega automáticamente en **Vercel** desde la rama `main`.
 
 ```bash
-ng test
+npm run build
+# outputDirectory: dist/portfolio-valentin/browser
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Licencia
 
-```bash
-ng e2e
-```
+© 2026 Valentín Valero Jiménez — Todos los derechos reservados.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
