@@ -72,6 +72,14 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
       work: [
         {
           id: 1,
+          role: 'Desarrollador front-end',
+          company: 'Softtek · Contrato de prácticas',
+          date: 'Mar 2026 — Actualidad',
+          description:
+            'Desarrollo y evolución del front-end de un sistema TPV utilizando Flutter Web, aplicando criterios de mantenibilidad, usabilidad y mejora continua. Colaboración diaria con el backend en .NET 8 y C#, realizando lectura y comprensión del código para alinear la capa de presentación con la lógica de negocio y garantizar una integración funcional estable.',
+        },
+        {
+          id: 2,
           role: 'Desarrollador Full-Stack',
           company: 'Tragsatec',
           date: 'Jun 2025 — Sep 2025',
@@ -167,6 +175,14 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
       work: [
         {
           id: 1,
+          role: 'Front-end Developer',
+          company: 'Softtek · Internship contract',
+          date: 'Mar 2026 — Present',
+          description:
+            'Development and evolution of a POS system front-end using Flutter Web, applying maintainability, usability and continuous improvement criteria. Daily collaboration with the .NET 8 and C# backend, including code reading and analysis to align the presentation layer with business logic and ensure stable functional integration.',
+        },
+        {
+          id: 2,
           role: 'Full-Stack Developer',
           company: 'Tragsatec',
           date: 'Jun 2025 — Sep 2025',
