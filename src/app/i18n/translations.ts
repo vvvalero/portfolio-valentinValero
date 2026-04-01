@@ -72,7 +72,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
       work: [
         {
           id: 1,
-          role: 'Desarrollador front-end',
+          role: 'Desarrollador Front-End',
           company: 'Softtek · Contrato de prácticas',
           date: 'Mar 2026 — Actualidad',
           description:
@@ -175,7 +175,7 @@ export const TRANSLATIONS: Record<Lang, Translations> = {
       work: [
         {
           id: 1,
-          role: 'Front-end Developer',
+          role: 'Front-End Developer',
           company: 'Softtek · Internship contract',
           date: 'Mar 2026 — Present',
           description:
